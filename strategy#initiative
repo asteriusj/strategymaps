@@ -1,0 +1,46 @@
+{
+  "kind": "strategy#initiative",
+  "typeOf": "Initiative",
+  "etag": "",
+  "id": "",
+  "parentId": "",
+  "keywords": "",
+  "categories": "",
+  "name": "",
+  "description": "",
+  "status": "N/A",
+  "statusupdate": "",
+  "statuscolor": "",
+  "startdate": "",
+  "enddata": "",
+  "percentcomplete": "0",
+  "activeflag": false,
+  "measures": [
+    
+  ],
+  "tasks": [
+    
+  ],
+  "subinitiatives": [
+    
+  ],
+  "userdefinedfields": [
+    {
+      "name": "Budget",
+      "value": ""
+    },
+    {
+      "name": "Remaining to Complete",
+      "value": ""
+    },
+    {
+      "name": "Spent to Date",
+      "value": ""
+    }
+  ],
+  "assignedto": "",
+  "assignedby": "",
+  "attacheddocuments": [
+    
+  ]
+}
