@@ -1,0 +1,61 @@
+{
+  "kind": "strategy#map",
+  "typeOf": "",
+  "etag": "",
+  "uid": "",
+  "id": "",
+  "title": "",
+  "summary": "",
+  "owner": "",
+  "published": true,
+  "userdefinedfields": [
+    {
+      "name": "",
+      "value": ""
+    }
+  ],
+  "attacheddocuments": [
+    
+  ],
+  "prefixes": [
+    
+  ],
+  "themes": [
+    {
+      "kind": "strategy#theme",
+      "typeOf": "",
+      "etag": "",
+      "id": "",
+      "name": "",
+      "description": "",
+      "owner": "",
+      "document": "",
+      "comments": [
+        
+      ],
+      
+    }
+  ],
+  "persepctives": [
+    
+  ],
+  "document": "",
+  "report": "",
+  "analysis": "",
+  "shortname": "",
+  "scorecards": [
+    
+  ],
+  "measures": [
+    
+  ],
+  "objectives": [
+    
+  ],
+  "initiatives": [
+    
+  ],
+  "tasks": [
+    
+  ]
+}
