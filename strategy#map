@@ -1,25 +1,15 @@
 {
   "kind": "strategy#map",
-  "typeOf": "",
+  "typeOf": "Strategy Map",
   "etag": "",
   "uid": "",
   "id": "",
+  "keywords": "",
+  "categories": "",
   "title": "",
   "summary": "",
   "owner": "",
   "published": true,
-  "userdefinedfields": [
-    {
-      "name": "",
-      "value": ""
-    }
-  ],
-  "attacheddocuments": [
-    
-  ],
-  "prefixes": [
-    
-  ],
   "themes": [
     {
       "kind": "strategy#theme",
@@ -39,10 +29,6 @@
   "persepctives": [
     
   ],
-  "document": "",
-  "report": "",
-  "analysis": "",
-  "shortname": "",
   "scorecards": [
     
   ],
@@ -57,5 +43,16 @@
   ],
   "tasks": [
     
-  ]
+  ],
+  "userdefinedfields": [
+    {
+      "name": "version",
+      "value": "initial creation"
+    }
+  ],
+  "attacheddocuments": [
+    
+  ],
+  "shortname": "",
+  
 }
