@@ -1,0 +1,28 @@
+{
+  "kind": "strategy#task",
+  "typeOf": "Task",
+  "etag": "",
+  "id": "",
+  "parentId": "",
+  "keywords": "",
+  "categories": "",
+  "name": "",
+  "description": "",
+  "initiative": "",
+  "subinitiative": "",
+  "status": "N/A",
+  "statuscolor": "",
+  "startdate": "",
+  "enddata": "",
+  "percentcomplete": "0",
+  "activeflag": true,
+  "userdefinedfields": [
+    
+  ],
+  "assignedto": "",
+  "assignedby": "",
+  "pmlink": "",
+  "attacheddocuments": [
+    
+  ]
+}
