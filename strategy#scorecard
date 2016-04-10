@@ -1,0 +1,21 @@
+{
+  "kind": "strategy#scorecard",
+  "typeOf": "Balanced Scorecard",
+  "etag": "",
+  "items": [
+    {
+      "kind": "strategy#scorecard",
+      "typeOf": "Balanced Scorecard",
+      "id": "1",
+      "parentId": "",
+      "prefix": "",
+      "title": "Sample Scorecard",
+      "summary": "",
+      "owner": "",
+      "published": false,
+      "objectives": [
+        
+      ]
+    }
+  ]
+}
