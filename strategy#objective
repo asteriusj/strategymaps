@@ -1,0 +1,27 @@
+{
+  "kind": "strategy#objective",
+  "typeOf": "Objective",
+  "etag": "",
+  "id": "11",
+  "parentId": "",
+  "keywords": "",
+  "categories": "",
+  "name": "",
+  "description": "",
+  "owner": "",
+  "measures": [
+    
+  ],
+  "objectives": [
+    
+  ],
+  "initiatives": [
+    
+  ],
+  "from-to-gap": "",
+  "perspective": "",
+  "theme": "",
+  "document": "",
+  "image": "",
+  "shortname": ""
+}
