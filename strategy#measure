@@ -1,47 +1,47 @@
 {
-  "kind": "strategy#measure",
-  "typeOf": "Measure",
-  "id": "",
-  "keywords": "",
-  "categories": "",
-  "name": "",
-  "description": "",
-  "owner": "",
-  "polarity": "Higher Is Better (Up Arrow is Green)",
-  "timeperiod type": "Month",
-  "unitofmeasure": "Value 0 Decimal",
-  "targetvalue": {
-    "v": "50",
-    "r": "",
-    "y": "",
-    "g": ""
-  },
-  "datavalues": [
-    {
-      "timeperiod": "Dec 2015",
-      "targetvalue": "50",
-      "actualvalue": "40",
-      "approved": true
-    },
-    {
-      "timeperiod": "Nov 2015",
-      "targetvalue": "50",
-      "actualvalue": "30",
-      "approved": true
-    },
-    
-  ],
+      "kind": "strategy#measure",
+      "typeOf": "Performance Metric",
+      "uid": "bdf06ae0-9f3b-4454-a1ce-830a11012188",
+      "name": "# of foot patrols per week",
+      "description": "",
+      "owner": "",
+      "polarity": "Higher Is Better (Up Arrow is Green)",
+      "timeperiod type": "Month",
+      "unitofmeasure": "Value 0 Decimal",
+      "targetvalue": {
+        "v": "50",
+        "r": "",
+        "y": "",
+        "g": ""
+      },
+      "datavalues": [
+        {
+          "timeperiod": "Dec 2015",
+          "targetvalue": "50",
+          "actualvalue": "40",
+          "approved": true
+        },
+        {
+          "timeperiod": "Nav 2015",
+          "targetvalue": "50",
+          "actualvalue": "30",
+          "approved": true
+        },
+   ],
   "measures": [
-    
+
   ],
   "initiatives": [
-    
+
   ],
   "maintainers": [
-    
+
   ],
-  "document": "",
-  "report": "",
-  "analysis": "",
-  "shortname": ""
+  "userdefinedfields": [
+
+  ],
+  "attacheddocuments": [
+
+  ],
+  "shortname": "foot patrols / week"
 }
