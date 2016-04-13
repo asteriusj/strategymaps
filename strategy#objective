@@ -2,26 +2,21 @@
   "kind": "strategy#objective",
   "typeOf": "Objective",
   "etag": "",
-  "id": "11",
+  "uid": "59d31a64-2831-4d78-b68e-332ccaf297fa",
+  "id": "212121",
   "parentId": "",
   "keywords": "",
   "categories": "",
-  "name": "",
+  "name": "Decrease turnover of 15% compared to last year ",
   "description": "",
   "owner": "",
-  "measures": [
-    
-  ],
-  "objectives": [
-    
-  ],
-  "initiatives": [
-    
-  ],
+  "measures": [],
+  "objectives": [],
+  "initiatives": [],
   "from-to-gap": "",
-  "perspective": "",
-  "theme": "",
+  "perspective": "Financial",
+  "theme": "Operationally Excellent",
   "document": "",
   "image": "",
-  "shortname": ""
+  "shortname": "Descrease turnover"
 }
