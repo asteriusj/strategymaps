@@ -1,0 +1,1049 @@
+FORMAT: 1A
+HOST: http://docs.strategymaps.apiary.io/
+
+# strategymaps
+Strategymaps is an open source project of RESTful API definitions for data models that embrace a balanced scorecard methodology for strategic alignment and performance measurement. Balanced Scorecards (BSC) can be defined by a hierarchy of scorecards, objectives, measures, initiatives and tasks and organized by perspectives for an organization.
+
+The motivation of strategymaps  to create a core definition and to remove some of the confusion and mystic of strategic planning and execution. A number of systems implement BSC elements but offer few integration features and have differing data models. An independant integration data model can help the field grow.
+
+https://github.com/asteriusj/strategymaps
+http://docs.strategymaps.apiary.io/
+https://ide.c9.io/asteriusj/strategymaps
+
+While the data model is significantly influence by BSC and software specific to the methodology, this project is intended to be able to address planning and execution tracking orientations.
+
+## Strategy Maps Collection [/maps]
+
+### List Strategy Maps [GET]
+
++ Response 200 (application/json)
+
+            [
+                {
+                    "": "",
+                    "published_at": "2015-08-05T08:40:51.620Z",
+                }
+            ]
+
+### CreateStrategyMap [POST]
+You may create new strqtegy map using this action. It takes a JSON
+object containing a map and associted scorcards, objectives, measures, initiatives and tasks.
+
++ Request (application/json)
+
+            {
+                "map": "My Strategy Map"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /maps/2
+
+    + Body
+
+            {
+              "kind": "strategy#map",
+              "typeOf": "Strategy Map",
+              "etag": "",
+              "uid": "c24217b0-6311-4451-92ff-fa52cdd3e229",
+              "id": "63114451",
+              "keywords": "",
+              "categories": "",
+              "title": "My Strategy Map",
+              "summary": "",
+              "owner": "",
+              "published": false,
+              "themes": [
+                {
+                  "kind": "strategy#theme",
+                  "typeOf": "Theme Filter",
+                  "uid": "ac523395-839b-4dfa-97bf-6207fe103802",
+                  "name": "Customer Intimate",
+                  ,
+                  "shortname": "Customer Intimate"
+                },
+                {
+                  "kind": "strategy#theme",
+                  "typeOf": "Theme Filter",
+                  "uid": "a5d528f1-420c-40d0-8f9c-519041a1c1d5",
+                  "name": "Operationally Excellent",
+                  "shortname": "Operationally Excellent"
+                },
+                {
+                  "kind": "strategy#theme",
+                  "typeOf": "Theme Filter",
+                  "uid": "27dd2f1c-8728-4938-805e-e1c14aa1ba83",
+                  "name": "Top Innovator",
+                  "shortname": "Top Innovator"
+                }
+              ],
+              "persepctives": [
+                {
+                  "kind": "strategy#perspective",
+                  "typeOf": "Perspective",
+                  "uid": "ea2ea8b7-1d56-4f22-b27a-7a209937f49e",
+                  "name": "Financial",
+                  "shortname": "Financial"
+                },
+                {
+                  "kind": "strategy#perspective",
+                  "typeOf": "Perspective",
+                  "uid": "600f01c0-b5f3-4a27-a796-cbcdbdd90a74",
+                  "name": "Customer Perspective",
+                  "shortname": "Customer"
+                },
+                {
+                  "kind": "strategy#perspective",
+                  "typeOf": "Internal Business Processes",
+                  "uid": "e670a079-9509-45fe-8282-d8ab4ac433ef",
+                  "name": "Financial",
+                  "shortname": "Internal Processes"
+                },
+                {
+                  "kind": "strategy#perspective",
+                  "typeOf": "Perspective",
+                  "uid": "32df0f5b-6929-4d90-9b22-02cf1c1ba647",
+                  "name": "Learning & Growth",
+                  "shortname": "Learning and Growth"
+                }
+              ],
+              "maps": [ ],
+              "scorecards": [
+                {
+                  "kind": "strategy#scorecard",
+                  "typeOf": "Scorecard",
+                  "uid": "0b6bfba8-65c2-4380-82b6-7b87be5cfd95",
+                  "id": "1",
+                  "parentId": "",
+                  "title": "Sample Scorecard",
+                  "shortname": ""
+                }
+              ],
+              "measures": [
+                {
+                  "kind": "strategy#measure",
+                  "typeOf": "Metric",
+                  "uid": "bdf06ae0-9f3b-4454-a1ce-830a11012188",
+                  "name": "Number of foot patrols per week",
+                  "shortname": "foot patrols / week"
+                },
+                {
+                  "kind": "strategy#measure",
+                  "typeOf": "Metric",
+                  "uid": "9977e295-7405-406e-bb58-5f95dba027c4",
+                  "name": "Hours of skills training completed in fiscal period",
+                  "shortname": "Hours of skills training"
+                },
+                {
+                  "kind": "strategy#measure",
+                  "typeOf": "Metric",
+                  "uid": "75ec395e-1084-4600-965a-27e04b1e73a9",
+                  "name": "Number of People trained in fiscal period",
+                  "shortname": "# of People trained"
+                }
+              ],
+              "objectives": [
+                {
+                  "name": "Decrease turnover of 15% compared to last year",
+                  "id": "212121"
+                },
+                {
+                  "name": "Identify new technology advantages to our process",
+                  "id": "121212"
+                }
+              ],
+              "initiatives": [
+                {
+                  "kind": "strategy#initiative",
+                  "typeOf": "Related Initiatives",
+                  "uid": "30f8dff1-cf1d-4d45-be53-01c0d8852927",
+                  "id": "1111",
+                  "parentId": "",
+                  "name": "Adding More Officers for Foot Patrol",
+                  
+                }
+              ],
+              "tasks": [
+                {
+                  "kind": "strategy#task",
+                  "typeOf": "Task",
+                  "uid": "57307a07-c6a3-4cbc-8a01-6999ee8e3389",
+                  "id": "11112",
+                  "parentId": "1111",
+                  "name": "Train Officers",
+                  "description": "Train more officers for foot patrols"
+                },
+                {
+                  "kind": "strategy#task",
+                  "typeOf": "Task",
+                  "uid": "ca5e6697-517b-45bc-98fa-e7c85c40061c",
+                  "id": "1111",
+                  "parentId": "",
+                  "name": "Recruit Officers",
+                  "description": "Recruit officers for foot patrols"
+                }
+              ],
+              "userdefinedfields": [
+                {
+                  "name": "version",
+                  "value": "initial creation"
+                }
+              ],
+              "attacheddocuments": [
+                
+              ],
+              "shortname": "",
+              
+            }
+
+
+## Strategy Map [/strategymap/{uid}]
+A single Strategy Map object.
+
+The Strategy Map resource has the following attributes: 
+
+- kind
+- typeOf
+- etag
+- uid
+- id
+- title
+- summary
+- owner
+- published
+- created_at
+
+The states *id* and *created_at* are assigned by the API at the moment of creation. 
+
+
++ Parameters
+    + id (string) ... ID or UID of the resource.
+
++ Model (application/hal+json)
+
+    HAL+JSON representation of Gist Resource. In addition to representing its state in the JSON form it offers affordances in the form of the HTTP Link header and HAL links.
+
+    + Headers
+
+            Link: <http:/api.____.com/gists/42>;rel="self", <http:/api.____.com/strategymap/654321/star>;rel="star"
+
+    + Body
+
+            {
+                "_links": {
+                    "self": { "href": "/strategymap/654321" },
+                    "star": { "href": "/strategymap/654321/star" },
+                },
+                "id": "9876",
+                "created_at": "2016-02-14T02:15:15Z",
+                "summary": "",
+                "title": "My Strategy Map"
+            }
+
+
+### RetrieveStrategyMap [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `9876`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+              "kind": "strategy#map",
+              "typeOf": "Strategy Map",
+              "etag": "",
+              "uid": "",
+              "id": "654321",
+              "keywords": "",
+              "categories": "",
+              "title": "My Strategy Map",
+              "summary": "",
+              "owner": "",
+              "published": true,
+              "themes": [
+    
+              ],
+              "persepctives": [
+                
+              ],
+              "maps": [ 
+              
+              ],
+              "scorecards": [
+                
+              ],
+              "measures": [
+                
+              ],
+              "objectives": [
+                
+              ],
+              "initiatives": [
+                
+              ],
+              "tasks": [
+                
+              ],
+              "userdefinedfields": [
+                {
+                  "name": "version",
+                  "value": "initial creation"
+                }
+              ],
+              "attacheddocuments": [
+                
+              ],
+              "shortname": "",
+              
+            }
+
+### UpdateStratgyMap [PATCH]
+
+
++ Request (application/json)
+
+            {
+                "
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+    + Body
+
+            {
+            
+            }
+
+### DeleteStratgyMap [DELETE]
+
+
+## Star [/strategymap/{id}/star]
+Star resource represents a strategy Map starred status. 
+
+The Star resource has the following attribute:
+
+- starred
+
+
++ Parameters
+
+    + id (string) ... ID or UID of the object in the form of a hash
+
++ Model (application/hal+json)
+
+    HAL+JSON representation of Star Resource.
+
+    + Headers
+
+            Link: <http:/api.____.com/strategymap/654321/star>;rel="self"
+
+    + Body
+
+            {
+                "_links": {
+                    "self": { "href": "/person/9876/star" },
+                },
+                "starred": true
+            }
+
+### Star a Strategy Map [PUT]
++ Response 204
+
+### Unstar a Strategy Map [DELETE]
++ Response 204
+
+### Check if a Strategy Map is Starred [GET]
++ Response 200
+
+    [Star][]
+    
+    
+## Strategy Map Status [/strategymap/{uid}/status]
+Published status element for Strategy Map.
+         
+### GetStrategyMapStatus [GET]
+Returns the published status element value for the strategy map uid or id provided
+
++ Parameters
+    + id (required, number, `654321`) ... ID or Unique Id of the Person
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+    
+            {
+                "published": true
+            }
+  
+
+## Strategy Map Scorecards [/strategymap/{uid}/scorecards]
+
+### GetStrategyMapScorecards [GET]
+
++ Response 200 (application/json)
+
+            [
+            
+            ]
+        
+## Strategy Scorecard [/strategymap/scorecard/{uid}/]
+A scorecard for a strategy 
+
+### CreateStrategyScorecard [POST]
+
++ Request (application/json)
+
+            {
+                "
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+    + Body
+
+            {
+            
+            }
+            
+### RetrieveStrategyScorecard [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `9876`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+              "kind": "strategy#scorecard",
+              "typeOf": "Balanced Scorecard",
+              "etag": "",
+              "items": [
+                {
+                  "kind": "strategy#scorecard",
+                  "typeOf": "Scorecard",
+                  "uid": "0b6bfba8-65c2-4380-82b6-7b87be5cfd95",
+                  "id": "1",
+                  "parentId": "",
+                  "prefix": "",
+                  "title": "Sample Scorecard",
+                  "summary": "",
+                  "owner": "",
+                  "published": false,
+                  "objectives": [
+                    
+                  ]
+                }
+              ]
+            }
+        
+### UpdateStratgyScorecard [PATCH]
+
++ Request (application/json)
+
+            {
+                "
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+    + Body
+
+            {
+            
+            }
+            
+### DeleteStrategyScorecard [DELETE]
+
+
+## Strategy Map Objectives [/strategymap/{uid}/objectives]
+List of objectives for strategy
+
+### GetStrategyObjectives [GET]
+Returns the entity element names and values for uid provided
+
++ Parameters
+    + id (required, number, `654321`) ... uid or id of strategy map
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+    
+            [
+                {
+                    "map": "My Strategy Map",
+                    "published_at": "2016-04-05T08:40:51.620Z",
+                    "objectives": [
+                        {
+                          "name": "Decrease turnover of 15% compared to last year",
+                          "id": 212121
+                        },
+                        {
+                          "name": "Identify new technology advantages to our process",
+                          "id": 121212
+                        }
+                      ]
+                }
+            ]
+         
+
+## Strategy Objective [/strategymap/objective/{uid}/]
+An objective for a strategy
+
+### CreateStrategyObjective [POST]
+
+### RetrieveStrategyObjective [GET]
+Returns the element names and values for the object requested
+
++ Parameters
+    + id (required, number, `212121`) ... uid or id of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+    
+            {
+              "kind": "strategy#objective",
+              "typeOf": "Objective",
+              "etag": "",
+              "uid": "59d31a64-2831-4d78-b68e-332ccaf297fa",
+              "id": "212121",
+              "parentId": "",
+              "keywords": "",
+              "categories": "",
+              "name": "Decrease turnover of 15% compared to last year ",
+              "description": "",
+              "owner": "",
+              "measures": [
+                
+              ],
+              "objectives": [
+                
+              ],
+              "initiatives": [
+                
+              ],
+              "from-to-gap": "",
+              "perspective": "Financial",
+              "theme": "Operationally Excellent",
+              "document": "",
+              "image": "",
+              "shortname": "Descrease turnover"
+            }
+    
+### UpdateStratgyObjective [PATCH]
+
+### DeleteStrategyObjective [DELETE]
+
+
+## Strategy Map Measures [/strategymap/{uid}/measures]
+
+### GetStrategyMapMeasures [GET]
+
++ Response 200 (application/json)
+
+            [
+              {
+                "kind": "strategy#measure",
+                "typeOf": "Metric",
+                "uid": "bdf06ae0-9f3b-4454-a1ce-830a11012188",
+                "name": "Number of foot patrols per week",
+                "description": "",
+                "shortname": "foot patrols / week"
+              },
+              {
+                "kind": "strategy#measure",
+                "typeOf": "Metric",
+                "uid": "9977e295-7405-406e-bb58-5f95dba027c4",
+                "name": "Hours of skills training completed in fiscal period",
+                "description": "",
+                "shortname": "Hours of skills training"
+              },
+              {
+                "kind": "strategy#measure",
+                "typeOf": "Metric",
+                "uid": "75ec395e-1084-4600-965a-27e04b1e73a9",
+                "name": "Number of People trained in fiscal period",
+                "description": "",
+                "shortname": "# of People trained"
+              }
+            ]
+        
+## Strategy Measure [/strategymap/measure/{uid}/]
+A measure for a strategy can rated against a Target for comparison. The Target is usually graded into levels like Outstanding, Above target, on Target and below target. In the presentation of results the target levels are usually color coded so you can see at glance if you are on target, below target, above target etc
+
+### CreateStrategyMeasure [POST]
+
+### RetrieveStrategyMeasure [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `bdf06ae09f3b4454a1ce830a11012188`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+              "kind": "strategy#measure",
+              "typeOf": "Performance Metric",
+              "uid": "bdf06ae0-9f3b-4454-a1ce-830a11012188",
+              "name": "# of foot patrols per week",
+              "description": "",
+              "owner": "",
+              "polarity": "Higher Is Better (Up Arrow is Green)",
+              "timeperiod type": "Month",
+              "unitofmeasure": "Value 0 Decimal",
+              "targetvalue": {
+                "v": "50",
+                "r": "",
+                "y": "",
+                "g": ""
+              },
+              "datavalues": [
+                {
+                  "timeperiod": "Dec 2015",
+                  "targetvalue": "50",
+                  "actualvalue": "40",
+                  "approved": true
+                },
+                {
+                  "timeperiod": "Nav 2015",
+                  "targetvalue": "50",
+                  "actualvalue": "30",
+                  "approved": true
+                },
+                
+              ],
+              "measures": [
+                
+              ],
+              "initiatives": [
+                
+              ],
+              "maintainers": [
+                
+              ],
+              "userdefinedfields": [
+                
+              ],
+              "attacheddocuments": [
+                
+              ],
+              "shortname": "foot patrols / week"
+            }
+        
+### UpdateStratgyMeasure [PATCH]
+
+### DeleteStrategyMeasure [DELETE]
+
+
+## Strategy Map Initiatives [/strategymap/{uid}/initiatives]
+Strategy Map Initiatives are the action projects that are needed to help the organization be successful with its strategy. 
+
+### GetStrategyMapInitiatives [GET]
+
++ Response 200 (application/json)
+
+            [
+        
+            ]
+
+## Strategic Initiative [/strategymap/initiative/{uid}/]
+An initiatives for a strategy are tied to Strategic Objectives, are of significant importance to the whole organization, and are far reaching. 
+
+### CreateStrategicInitiative [POST]
+
+### RetrieveStrategicInitiative [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `1111`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+              "kind": "strategy#initiative",
+              "typeOf": "Related Initiatives",
+              "etag": "",
+              "uid": "30f8dff1-cf1d-4d45-be53-01c0d8852927",
+              "id": "1111",
+              "parentId": "",
+              "prefix": "",
+              "name": "Adding More Officers for Foot Patrol",
+              "description": "",
+              "status": "N/A",
+              "statusupdate": "",
+              "statuscolor": "",
+              "startdate": "",
+              "enddata": "",
+              "percentcomplete": "0",
+              "activeflag": false,
+              "measures": [
+                
+              ],
+              "tasks": [
+                
+              ],
+              "subinitiatives": [
+                
+              ],
+              "userdefinedfields": [
+                {
+                  "name": "Budget",
+                  "value": ""
+                },
+                {
+                  "name": "Remaining to Complete",
+                  "value": ""
+                },
+                {
+                  "name": "Spent to Date",
+                  "value": ""
+                }
+              ],
+              "assignedto": "",
+              "assignedby": "",
+              "attacheddocuments": [
+                
+              ]
+            }
+        
+### UpdateStratgicInitiative [PATCH]
+
+### DeleteStrategicInitiative [DELETE]
+
+
+## Strategy Initative Tasks [/strategymap/initiative/{uid}/tasks]
+Strategy Initiative Tasks 
+
+### GetStrategyInitiativeTasks [GET]
+
++ Response 200 (application/json)
+
+                [
+                  {
+                    "kind": "strategy#task",
+                    "typeOf": "Task",
+                    "etag": "",
+                    "uid": "57307a07-c6a3-4cbc-8a01-6999ee8e3389",
+                    "id": "11112",
+                    "parentId": "1111",
+                    "prefix": "",
+                    "name": "Train Officers",
+                    "description": "Train more officers for foot patrols"
+                  },
+                  {
+                    "kind": "strategy#task",
+                    "typeOf": "Task",
+                    "etag": "",
+                    "uid": "ca5e6697-517b-45bc-98fa-e7c85c40061c",
+                    "id": "1111",
+                    "parentId": "",
+                    "prefix": "",
+                    "name": "Recruit Officers",
+                    "description": "Recruit officers for foot patrols"
+                  }
+                ]
+
+## Initiative Task [/strategymap/task/{uid}/]
+A task for a strategy initiative make initiatives actionable.
+
+### CreateInitiativeTask [POST]
+
+### RetrieveInitiativeTask [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `11112`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            {
+              "kind": "strategy#task",
+              "typeOf": "Task",
+              "etag": "",
+              "uid": "57307a07-c6a3-4cbc-8a01-6999ee8e3389",
+              "id": "11112",
+              "parentId": "1111",
+              "prefix": "",
+              "name": "Train Officers",
+              "description": "Train more officers for foot patrols",
+              "initiative": "Adding More Officers for Foot Patrol",
+              "subinitiative": "",
+              "status": "N/A",
+              "statuscolor": "",
+              "startdate": "",
+              "enddata": "",
+              "percentcomplete": "0",
+              "activeflag": true,
+              "assignedto": "",
+              "assignedby": "",
+              "pmtask": "",
+              "attacheddocuments": [
+                
+              ]
+            }
+        
+### UpdateInitiativeTask [PATCH]
+
+### DeleteInitiativeTask [DELETE]
+
+
+## Strategy Map Perspectives [/strategymap/{uid}/perspectives]
+Perspectives are the set of (usually) four “viewpoints” to a strategy as represented by key constituents/stakeholders of that strategy.
+
+### GetStrategyMapPerspectives [GET]
+
++ Response 200 (application/json)
+
+                [
+                  {
+                    "kind": "strategy#perspective",
+                    "typeOf": "Perspective",
+                    "etag": "",
+                    "uid": "ea2ea8b7-1d56-4f22-b27a-7a209937f49e",
+                    "name": "Financial",
+                    "description": "Financial Perspective: How do we look to shareholders?",
+                    "image": "",
+                    "userdefinedfields": [
+                      
+                    ],
+                    "comments": [
+                      
+                    ],
+                    "attacheddocuments": [
+                      
+                    ],
+                    "shortname": "Financial"
+                  },
+                  {
+                    "kind": "strategy#perspective",
+                    "typeOf": "Perspective",
+                    "etag": "",
+                    "uid": "600f01c0-b5f3-4a27-a796-cbcdbdd90a74",
+                    "name": "Customer Perspective",
+                    "description": "Customer Perspective: How do customers see us?",
+                    "image": "",
+                    "userdefinedfields": [
+                      
+                    ],
+                    "attacheddocuments": [
+                      
+                    ],
+                    "shortname": "Customer"
+                  },
+                  {
+                    "kind": "strategy#perspective",
+                    "typeOf": "Internal Business Processes",
+                    "etag": "",
+                    "uid": "e670a079-9509-45fe-8282-d8ab4ac433ef",
+                    "name": "Financial",
+                    "description": "Internal Business Processes: What must we excel at?",
+                    "image": "",
+                    "userdefinedfields": [
+                      
+                    ],
+                    "comments": [
+                      
+                    ],
+                    "attacheddocuments": [
+                      
+                    ],
+                    "shortname": "Internal Processes"
+                  },
+                  {
+                    "kind": "strategy#perspective",
+                    "typeOf": "Perspective",
+                    "etag": "",
+                    "uid": "32df0f5b-6929-4d90-9b22-02cf1c1ba647",
+                    "name": "Learning & Growth",
+                    "description": "Learning and Growth Perspective: How can we continue to improve, create value and innovate?",
+                    "image": "",
+                    "userdefinedfields": [
+                      
+                    ],
+                    "comments": [
+                      
+                    ],
+                    "attacheddocuments": [
+                      
+                    ],
+                    "shortname": "Learning and Growth"
+                  }
+                ]
+        
+## Strategy Perspective [/strategymap/perspective/{uid}/]
+A perspective for a strategy represents the set of Objectives desired by a particular stakeholder (Financial, Customer, Internal Process, Learning & Growth/Employees). 
+
+### CreateStrategyPerspective  [POST]
+
+### RetrieveStrategyPerspective  [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `ea2ea8b71d564f22b27a7a209937f49e`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+                {
+                    "kind": "strategy#perspective",
+                    "typeOf": "Perspective",
+                    "etag": "",
+                    "uid": "ea2ea8b7-1d56-4f22-b27a-7a209937f49e",
+                    "name": "Financial",
+                    "description": "Financial Perspective: How do we look to shareholders?",
+                    "image": "",
+                    "userdefinedfields": [
+                      
+                    ],
+                    "comments": [
+                      
+                    ],
+                    "attacheddocuments": [
+                      
+                    ],
+                    "shortname": "Financial"
+                }
+        
+### UpdateStrategyPerspective  [PATCH]
+
+### DeleteStrategyPerspective [DELETE]
+
+## Strategy Map Themes [/strategymap/{uid}/themes]
+Strategy Map Themes represent vertically linked groupings of Objectives across several Scorecard Perspectives
+
+### GetStrategyMapThemes [GET]
+
++ Response 200 (application/json)
+
+                [
+                  {
+                    "kind": "strategy#theme",
+                    "typeOf": "Theme Filter",
+                    "etag": "",
+                    "uid": "ac523395-839b-4dfa-97bf-6207fe103802",
+                    "name": "Customer Intimate",
+                    "description": "Be Customer Intimate Always",
+                    "shortname": "Customer Intimate"
+                  },
+                  {
+                    "kind": "strategy#theme",
+                    "typeOf": "Theme Filter",
+                    "etag": "",
+                    "uid": "a5d528f1-420c-40d0-8f9c-519041a1c1d5",
+                    "name": "Operationally Excellent",
+                    "description": "HaveOperationalExcellenceineveryarea",
+                    "shortname": "Operationally Excellent"
+                  },
+                  {
+                    "kind": "strategy#theme",
+                    "typeOf": "Theme Filter",
+                    "etag": "",
+                    "uid": "27dd2f1c-8728-4938-805e-e1c14aa1ba83",
+                    "name": "TopInnovator",
+                    "description": "Top Innovator",
+                    "shortname": "Top Innovator"
+                  }
+                ]
+
+## Strategic Theme [/strategymap/theme/{uid}/]
+A strategic theme for a strategy are descriptive statements representing a major component of a strategy, as articulated at the highest level in the Vision.
+
+### CreateStrategicTheme  [POST]
+
+### RetrieveStrategicTheme  [GET]
+Returns the object element names and values for uid provided
+
++ Parameters
+    + id (required, number, `ac523395839b4dfa-7bf6207fe103802`) ... ID or UniqueID of the object
+
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+                {
+                  "kind": "strategy#theme",
+                  "typeOf": "Theme Filter",
+                  "etag": "",
+                  "uid": "ac523395-839b-4dfa-97bf-6207fe103802",
+                  "name": "Customer Intimate",
+                  "description": "Be Customer Intimate Always",
+                  "owner": "",
+                  "objectives": [
+                    
+                  ],
+                  "userdefinedfields": [
+                    
+                  ],
+                  "comments": [
+                    
+                  ],
+                  "attacheddocuments": [
+                    
+                  ],
+                  "shortname": "Customer Intimate"
+                }
+
+        
+### UpdateStrategyTheme  [PATCH]
+
+### DeleteStrategyTheme [DELETE]
