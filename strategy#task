@@ -2,13 +2,13 @@
   "kind": "strategy#task",
   "typeOf": "Task",
   "etag": "",
-  "id": "",
-  "parentId": "",
-  "keywords": "",
-  "categories": "",
-  "name": "",
-  "description": "",
-  "initiative": "",
+  "uid": "57307a07-c6a3-4cbc-8a01-6999ee8e3389",
+  "id": "11112",
+  "parentId": "1111",
+  "prefix": "",
+  "name": "Train Officers",
+  "description": "Train more officers for foot patrols",
+  "initiative": "Adding More Officers for Foot Patrol",
   "subinitiative": "",
   "status": "N/A",
   "statuscolor": "",
@@ -16,13 +16,8 @@
   "enddata": "",
   "percentcomplete": "0",
   "activeflag": true,
-  "userdefinedfields": [
-    
-  ],
   "assignedto": "",
   "assignedby": "",
-  "pmlink": "",
-  "attacheddocuments": [
-    
-  ]
+  "pmtask": "",
+  "attacheddocuments": []
 }

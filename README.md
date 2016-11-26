@@ -3,7 +3,9 @@ Strategy Maps is an API definition for data structures that embrace a balanced s
 
 The API definition can be used to implement integrations with BSC and other strategy planning and execution software. The data elements are extensible to allow for features not currently defined. The motivation of strategymaps to create a core definition and to remove some of the confusion and mystic of strategic planning and excution. While the data model is significantly influence by BSC and software specific to the methodology, this project is intended to be able to address planning and execution tracking orientations.
 
-
+https://github.com/asteriusj/strategymaps
+http://docs.strategymaps.apiary.io/
+https://ide.c9.io/asteriusj/strategymaps
 
 
 #References

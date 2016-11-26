@@ -2,8 +2,18 @@
   "kind": "strategy#perspective",
   "typeOf": "Perspective",
   "etag": "",
-  "id": "",
-  "name": "",
-  "description": "",
-  "document": ""
+  "uid": "ea2ea8b7-1d56-4f22-b27a-7a209937f49e",
+  "name": "Financial",
+  "description": "Financial Perspective: How do we look to shareholders?",
+  "image": "",
+  "userdefinedfields": [
+    
+  ],
+  "comments": [
+    
+  ],
+  "attacheddocuments": [
+    
+  ],
+  "shortname": "Financial"
 }
