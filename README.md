@@ -8,6 +8,9 @@ The API definition can be used to implement integrations with BSC and other stra
 
 #References
 
+https://en.wikipedia.org/wiki/Balanced_scorecard
+
+
 http://balancedscorecard.org/Resources/About-the-Balanced-Scorecard
 What is the Balanced Scorecard?
 The balanced scorecard is a strategic planning and management system that is used extensively in business and industry, government, and nonprofit organizations worldwide to align business activities to the vision and strategy of the organization, improve internal and external communications, and monitor organization ...
