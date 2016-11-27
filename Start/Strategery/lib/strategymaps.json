@@ -1,0 +1,29 @@
+[
+  {
+    "id": 11111,
+    "title": "Barry Strategy Map",
+    "owner": "Barney Poland",
+    "summary": "barney@contoso.com"
+  },
+  {
+    "id": 22222,
+    "title": "Lucy Strategy Map",
+    "owner": "Lacy Barrera",
+    "summary": "lacy@contoso.com"
+  },
+  {
+    "kind": "strategy#map",
+    "typeOf": "Strategy Map",
+    "etag": "",
+    "uid": "c24217b0-6311-4451-92ff-fa52cdd3e229",
+    "id": "33333",
+    "keywords": "",
+    "categories": "",
+    "title": "My Strategy Map",
+    "summary": "",
+    "owner": "",
+    "published": false,
+    
+    "shortname": ""
+  }
+]

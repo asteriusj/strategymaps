@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Strategymaps is an open source project of RESTful API definitions for data models that embrace a balanced scorecard methodology for strategic alignment and performance measurement. Balanced Scorecards (BSC) can be defined by a hierarchy of scorecards, objectives, measures, initiatives and tasks and organized by perspectives for an organization.",
+    "description": "Strategy Maps is an open source project of RESTful API definitions for data models that embrace a balanced scorecard methodology for strategic alignment and performance measurement. Balanced Scorecards (BSC) can be defined by a hierarchy of scorecards, objectives, measures, initiatives and tasks and organized by perspectives for an organization.",
     "version": "1.0.0",
     "title": "Strategy Maps API",
     "termsOfService": "",
@@ -17,7 +17,7 @@
   "basePath": "/v2",
   "tags": [
     {
-      "name": "strategymap",
+      "name": "strategymaps",
       "description": "",
       "externalDocs": {
         "description": "Find out more",
@@ -41,12 +41,12 @@
     "http"
   ],
   "paths": {
-    "/strategymap": {
+    "/strategymaps": {
       "get": {
         "tags": [
-          "strategymap"
+          "strategymaps"
         ],
-        "operationId": "strategymap_get",
+        "operationId": "getStrategyMaps",
         "consumes": [
           
         ],
@@ -69,7 +69,7 @@
       },
       "post": {
         "tags": [
-          "strategymap"
+          "strategymaps"
         ],
         "summary": "Add a new strategy map",
         "description": "",
@@ -100,22 +100,22 @@
         },
         "security": [
           {
-            "strategymap_auth": [
-              "write:strategymap",
-              "read:strategymap"
+            "strategymaps_auth": [
+              "write:strategymaps",
+              "read:strategymaps"
             ]
           }
         ]
       }
     },
-    "/strategymap/findByStatus": {
+    "/strategymaps/findByStatus": {
       "get": {
         "tags": [
-          "strategymap"
+          "strategymaps"
         ],
         "summary": "Finds Strategy Maps by status",
         "description": "Multiple status values can be provided with comma separated strings",
-        "operationId": "findStrategyMapByStatus",
+        "operationId": "findStrategyMapsByStatus",
         "produces": [
           "application/json"
         ],
@@ -154,21 +154,21 @@
         },
         "security": [
           {
-            "strategymap_auth": [
-              "write:strategymap",
-              "read:strategymap"
+            "strategymaps_auth": [
+              "write:strategymaps",
+              "read:strategymaps"
             ]
           }
         ]
       }
     },
-    "/strategymap/{id}": {
+    "/strategymaps/{id}": {
       "get": {
         "tags": [
-          "strategymap"
+          "strategymaps"
         ],
-        "summary": "Find strategymap by ID",
-        "description": "Returns a single strategymap",
+        "summary": "Find strategymaps by ID",
+        "description": "Returns a single strategymaps",
         "operationId": "getStrategyMapById",
         "produces": [
           "application/xml",
@@ -178,7 +178,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "ID of strategymap to return",
+            "description": "ID of strategymaps to return",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -208,9 +208,9 @@
       },
       "post": {
         "tags": [
-          "strategymap"
+          "strategymaps"
         ],
-        "summary": "Updates a strategymap  with form data",
+        "summary": "Updates a strategymaps with form data",
         "description": "",
         "operationId": "updateStrategyMapWithForm",
         "consumes": [
@@ -224,7 +224,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "ID of strategymap that needs to be updated",
+            "description": "ID of strategymaps that needs to be updated",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -232,14 +232,14 @@
           {
             "name": "title",
             "in": "formData",
-            "description": "Updated title of the strategymap",
+            "description": "Updated title of the strategymaps",
             "required": false,
             "type": "string"
           },
           {
             "name": "status",
             "in": "formData",
-            "description": "Updated status of the strategymap",
+            "description": "Updated status of the strategymaps",
             "required": false,
             "type": "string"
           }
@@ -251,16 +251,16 @@
         },
         "security": [
           {
-            "strategymap_auth": [
-              "write:strategymap",
-              "read:strategymap"
+            "strategymaps_auth": [
+              "write:strategymaps",
+              "read:strategymaps"
             ]
           }
         ]
       },
       "delete": {
         "tags": [
-          "strategymap"
+          "strategymaps"
         ],
         "summary": "Deletes a strategymap",
         "description": "",
@@ -279,7 +279,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "strategymap id to delete",
+            "description": "strategymaps id to delete",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -290,14 +290,14 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "strategymap not found"
+            "description": "strategymaps not found"
           }
         },
         "security": [
           {
-            "strategymap_auth": [
-              "write:strategymap",
-              "read:strategymap"
+            "strategymaps_auth": [
+              "write:strategymaps",
+              "read:strategymaps"
             ]
           }
         ]
@@ -439,13 +439,13 @@
     }
   },
   "securityDefinitions": {
-    "strategymap_auth": {
+    "strategymaps_auth": {
       "type": "oauth2",
-      "authorizationUrl": "http://http://nodejsapiappme.azurewebsites.net//oauth/dialog",
+      "authorizationUrl": "http://http://nodejsapiappme.azurewebsites.net/oauth/dialog",
       "flow": "implicit",
       "scopes": {
-        "write:strategymap": "modify strategy maps in your account",
-        "read:strategymap": "read your strategy maps"
+        "write:strategymaps": "modify strategy maps in your account",
+        "read:strategymaps": "read your strategy maps"
       }
     },
     "api_key": {
