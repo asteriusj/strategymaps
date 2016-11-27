@@ -13,17 +13,40 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "http://strategymaps.azurewebsites.net/",
+  "host": "strategymaps.azurewebsites.net",
+  "basePath": "/v2",
+  "tags": [
+    {
+      "name": "strategymap",
+      "description": "",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "map",
+      "description": "Access to "
+    },
+    {
+      "name": "owner",
+      "description": "Operations about owner",
+      "externalDocs": {
+        "description": "Find out more about our store",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
   "schemes": [
     "http"
   ],
   "paths": {
-    "/strategymaps": {
+    "/strategymap": {
       "get": {
         "tags": [
-          "StrategyMaps"
+          "strategymap"
         ],
-        "operationId": "strategymaps_get",
+        "operationId": "strategymap_get",
         "consumes": [
           
         ],
@@ -46,7 +69,7 @@
       },
       "post": {
         "tags": [
-          "StrategyMap"
+          "strategymap"
         ],
         "summary": "Add a new strategy map",
         "description": "",
@@ -66,7 +89,7 @@
             "description": "Strategy Map object that needs to be added",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Pet"
+              "$ref": "#/definitions/StrategyMap"
             }
           }
         ],
@@ -77,22 +100,22 @@
         },
         "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
+            "strategymap_auth": [
+              "write:strategymap",
+              "read:strategymap"
             ]
           }
         ]
       }
     },
-    "/strategymaps/findByStatus": {
+    "/strategymap/findByStatus": {
       "get": {
         "tags": [
-          "StrategyMaps"
+          "strategymap"
         ],
         "summary": "Finds Strategy Maps by status",
         "description": "Multiple status values can be provided with comma separated strings",
-        "operationId": "findStrategyMapsByStatus",
+        "operationId": "findStrategyMapByStatus",
         "produces": [
           "application/json"
         ],
@@ -131,102 +154,65 @@
         },
         "security": [
           {
-            "strategymaps_auth": [
-              "write:strategymaps",
-              "read:strategymaps"
+            "strategymap_auth": [
+              "write:strategymap",
+              "read:strategymap"
             ]
           }
         ]
       }
     },
-    "/strategymaps/{id}": {
+    "/strategymap/{id}": {
       "get": {
         "tags": [
-          "StrategyMaps"
+          "strategymap"
         ],
-        "operationId": "strategymaps_getById",
-        "consumes": [
-          
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/StrategyMap"
-              }
-            }
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "StrategyMaps"
-        ],
-        "summary": "Update an existing Strategy Map",
-        "description": "",
-        "operationId": "updateStrategyMap",
-        "consumes": [
-          "application/json",
-          "application/xml"
-        ],
+        "summary": "Find strategymap by ID",
+        "description": "Returns a single strategymap",
+        "operationId": "getStrategyMapById",
         "produces": [
           "application/xml",
           "application/json"
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "body",
-            "description": "StrategyMap object that needs to be updated",
+            "name": "id",
+            "in": "path",
+            "description": "ID of strategymap to return",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/StrategyMap"
-            }
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/StrategyMap"
+            }
+          },
           "400": {
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "StrategyMap not found"
-          },
-          "405": {
-            "description": "Validation exception"
+            "description": "Map not found"
           }
         },
         "security": [
           {
-            "strategymaps_auth": [
-              "write:strategymaps",
-              "read:strategymaps"
+            "api_key": [
+              
             ]
           }
         ]
       },
       "post": {
         "tags": [
-          "StrategyMaps"
+          "strategymap"
         ],
-        "summary": "Updates a StrategyMap with form data",
+        "summary": "Updates a strategymap  with form data",
         "description": "",
-        "operationId": "updatePetWithForm",
+        "operationId": "updateStrategyMapWithForm",
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
@@ -238,22 +224,22 @@
           {
             "name": "id",
             "in": "path",
-            "description": "ID of StrategyMap that needs to be updated",
+            "description": "ID of strategymap that needs to be updated",
             "required": true,
             "type": "integer",
             "format": "int64"
           },
           {
-            "name": "name",
+            "name": "title",
             "in": "formData",
-            "description": "Updated name of the StrategyMap",
+            "description": "Updated title of the strategymap",
             "required": false,
             "type": "string"
           },
           {
             "name": "status",
             "in": "formData",
-            "description": "Updated status of the StrategyMap",
+            "description": "Updated status of the strategymap",
             "required": false,
             "type": "string"
           }
@@ -265,18 +251,18 @@
         },
         "security": [
           {
-            "strategymaps_auth": [
-              "write:strategymaps",
-              "read:strategymaps"
+            "strategymap_auth": [
+              "write:strategymap",
+              "read:strategymap"
             ]
           }
         ]
       },
       "delete": {
         "tags": [
-          "StrategyMaps"
+          "strategymap"
         ],
-        "summary": "Deletes a StrategyMap",
+        "summary": "Deletes a strategymap",
         "description": "",
         "operationId": "deleteStrategyMap",
         "produces": [
@@ -293,7 +279,7 @@
           {
             "name": "id",
             "in": "path",
-            "description": "StrategyMap id to delete",
+            "description": "strategymap id to delete",
             "required": true,
             "type": "integer",
             "format": "int64"
@@ -304,14 +290,14 @@
             "description": "Invalid ID supplied"
           },
           "404": {
-            "description": "StrategyMap not found"
+            "description": "strategymap not found"
           }
         },
         "security": [
           {
-            "strategymaps_auth": [
-              "write:strategymaps",
-              "read:strategymaps"
+            "strategymap_auth": [
+              "write:strategymap",
+              "read:strategymap"
             ]
           }
         ]
@@ -453,13 +439,13 @@
     }
   },
   "securityDefinitions": {
-    "petstore_auth": {
+    "strategymap_auth": {
       "type": "oauth2",
       "authorizationUrl": "http://http://nodejsapiappme.azurewebsites.net//oauth/dialog",
       "flow": "implicit",
       "scopes": {
-        "write:strategymaps": "modify strategy maps in your account",
-        "read:strategymaps": "read your strategy maps"
+        "write:strategymap": "modify strategy maps in your account",
+        "read:strategymap": "read your strategy maps"
       }
     },
     "api_key": {

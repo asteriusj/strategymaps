@@ -1,17 +1,52 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "v1",
-        "title": "Contact List",
-        "description": "A Contact list API based on Swagger and built using Node.js"
+        "description": "Strategymaps is an open source project of RESTful API definitions for data models that embrace a balanced scorecard methodology for strategic alignment and performance measurement. Balanced Scorecards (BSC) can be defined by a hierarchy of scorecards, objectives, measures, initiatives and tasks and organized by perspectives for an organization.",
+        "version": "1.0.0",
+        "title": "Strategy Maps API",
+        "termsOfService": "",
+        "contact": {
+            "email": "info@asteriusmedia.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
     },
+    "host": "strategymaps.azurewebsites.net",
+    "basePath": "/v2",
+    "tags": [
+        {
+            "name": "strategymap",
+            "description": "",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://swagger.io"
+            }
+        },
+        {
+            "name": "map",
+            "description": "Access to "
+        },
+        {
+            "name": "owner",
+            "description": "Operations about owner",
+            "externalDocs": {
+                "description": "Find out more about our store",
+                "url": "http://swagger.io"
+            }
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
     "paths": {
-        "/contacts": {
+        "/strategymap": {
             "get": {
                 "tags": [
-                    "Contacts"
+                    "strategymap"
                 ],
-                "operationId": "contacts_get",
+                "operationId": "strategymap_get",
                 "consumes": [],
                 "produces": [
                     "application/json",
@@ -23,64 +58,547 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/Contact"
+                                "$ref": "#/definitions/StrategyMap"
                             }
                         }
                     }
                 },
                 "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "strategymap"
+                ],
+                "summary": "Add a new strategy map",
+                "description": "",
+                "operationId": "addStrategyMap",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Strategy Map object that needs to be added",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/StrategyMap"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "strategymap_auth": [
+                            "write:strategymap",
+                            "read:strategymap"
+                        ]
+                    }
+                ]
             }
         },
-        "/contacts/{id}": {
+        "/strategymap/findByStatus": {
             "get": {
                 "tags": [
-                    "Contacts"
+                    "strategymap"
                 ],
-                "operationId": "contacts_getById",
-                "consumes": [],
+                "summary": "Finds Strategy Maps by status",
+                "description": "Multiple status values can be provided with comma separated strings",
+                "operationId": "findStrategyMapByStatus",
                 "produces": [
-                    "application/json",
-                    "text/json"
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Status values that need to be considered for filter",
+                        "required": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "active",
+                                "inprocess",
+                                "inactive"
+                            ],
+                            "default": "active"
+                        },
+                        "collectionFormat": "multi"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/StrategyMap"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                },
+                "security": [
+                    {
+                        "strategymap_auth": [
+                            "write:strategymap",
+                            "read:strategymap"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/strategymap/{id}": {
+            "get": {
+                "tags": [
+                    "strategymap"
+                ],
+                "summary": "Find strategymap by ID",
+                "description": "Returns a single strategymap",
+                "operationId": "getStrategyMapById",
+                "produces": [
+                    "application/xml",
+                    "application/json"
                 ],
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
+                        "description": "ID of strategymap to return",
                         "required": true,
                         "type": "integer",
-                        "format": "int32"
+                        "format": "int64"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "successful operation",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Contact"
-                            }
+                            "$ref": "#/definitions/StrategyMap"
                         }
+                    },
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "Map not found"
                     }
                 },
-                "deprecated": false
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "strategymap"
+                ],
+                "summary": "Updates a strategymap  with form data",
+                "description": "",
+                "operationId": "updateStrategyMapWithForm",
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of strategymap that needs to be updated",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "name": "title",
+                        "in": "formData",
+                        "description": "Updated title of the strategymap",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "status",
+                        "in": "formData",
+                        "description": "Updated status of the strategymap",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "strategymap_auth": [
+                            "write:strategymap",
+                            "read:strategymap"
+                        ]
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "strategymap"
+                ],
+                "summary": "Deletes a strategymap",
+                "description": "",
+                "operationId": "deleteStrategyMap",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "api_key",
+                        "in": "header",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "strategymap id to delete",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid ID supplied"
+                    },
+                    "404": {
+                        "description": "strategymap not found"
+                    }
+                },
+                "security": [
+                    {
+                        "strategymap_auth": [
+                            "write:strategymap",
+                            "read:strategymap"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/owner": {
+            "post": {
+                "tags": [
+                    "owner"
+                ],
+                "summary": "Create owner",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "createOwner",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Created owner object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Owner"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/owner/{username}": {
+            "get": {
+                "tags": [
+                    "owner"
+                ],
+                "summary": "Get owner by user name",
+                "description": "",
+                "operationId": "getOwnerByName",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "The name that needs to be fetched. Use user1 for testing. ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Owner"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid username supplied"
+                    },
+                    "404": {
+                        "description": "Owner not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "owner"
+                ],
+                "summary": "Updated owner",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "updateOwner",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "owner that need to be updated",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Updated owner object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Owner"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid user supplied"
+                    },
+                    "404": {
+                        "description": "Owner not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "owner"
+                ],
+                "summary": "Delete owner",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "deleteOwner",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "path",
+                        "description": "The owner that needs to be deleted",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid username supplied"
+                    },
+                    "404": {
+                        "description": "Owner not found"
+                    }
+                }
             }
         }
     },
+    "securityDefinitions": {
+        "strategymap_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "http://http://nodejsapiappme.azurewebsites.net//oauth/dialog",
+            "flow": "implicit",
+            "scopes": {
+                "write:strategymap": "modify strategy maps in your account",
+                "read:strategymap": "read your strategy maps"
+            }
+        },
+        "api_key": {
+            "type": "apiKey",
+            "name": "api_key",
+            "in": "header"
+        }
+    },
     "definitions": {
-        "Contact": {
+        "StrategyMap": {
             "type": "object",
+            "required": [
+                "title"
+            ],
             "properties": {
+                "kind": {
+                    "type": "string"
+                },
+                "typeOf": {
+                    "type": "string"
+                },
+                "etag": {
+                    "type": "string"
+                },
+                "uid": {
+                    "type": "string"
+                },
                 "id": {
                     "format": "int32",
                     "type": "integer"
                 },
                 "name": {
+                    "type": "string",
+                    "example": "strategery"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "owner": {
+                    "$ref": "#/definitions/Owner"
+                },
+                "category": {
+                    "$ref": "#/definitions/Category"
+                },
+                "tags": {
+                    "type": "array",
+                    "xml": {
+                        "name": "tag",
+                        "wrapped": true
+                    },
+                    "items": {
+                        "$ref": "#/definitions/Tag"
+                    }
+                },
+                "status": {
+                    "type": "string",
+                    "description": "strategy map status",
+                    "enum": [
+                        "active",
+                        "inactive",
+                        "pending"
+                    ]
+                },
+                "created_at": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "StrategyMap"
+            }
+        },
+        "Owner": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
                     "type": "string"
                 },
                 "email": {
                     "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "userStatus": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "User Status"
+                }
+            },
+            "xml": {
+                "name": "User"
+            }
+        },
+        "Category": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Category"
+            }
+        },
+        "Tag": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "Tag"
+            }
+        },
+        "ApiResponse": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
                 }
             }
         }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
     }
 }

@@ -1,7 +1,7 @@
 'use strict';
-var dataProvider = require('../data/strategymaps.js');
+var dataProvider = require('../data/strategymap.js');
 /**
- * Operations on /strategymaps
+ * Operations on /strategymap
  */
 module.exports = {
     /**
@@ -11,7 +11,7 @@ module.exports = {
      * produces: application/json, text/json
      * responses: 200
      */
-    get: function strategymaps_get(req, res, next) {
+    get: function strategymap_get(req, res, next) {
         /**
          * Get the data for response 200
          * For response `default` status 200 is used.

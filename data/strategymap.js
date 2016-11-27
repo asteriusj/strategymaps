@@ -1,7 +1,7 @@
 'use strict';
 var Mockgen = require('./mockgen.js');
 /**
- * Operations on /strategymaps
+ * Operations on /strategymap
  */
 module.exports = {
     /**
@@ -10,7 +10,7 @@ module.exports = {
      * parameters: 
      * produces: application/json, text/json
      * responses: 200
-     * operationId: strategymaps_get
+     * operationId: strategymap_get
      */
     get: {
         200: function (req, res, callback) {
@@ -19,7 +19,7 @@ module.exports = {
              * Replace this by actual data for the api.
              */
             Mockgen().responses({
-                path: '/strategymaps',
+                path: '/strategymap',
                 operation: 'get',
                 response: '200'
             }, callback);
@@ -40,7 +40,7 @@ module.exports = {
              * Replace this by actual data for the api.
              */
             Mockgen().responses({
-                path: '/strategymaps',
+                path: '/strategymap',
                 operation: 'post',
                 response: '405'
             }, callback);

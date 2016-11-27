@@ -1,6 +1,6 @@
 'use strict';
 
-var contacts = require('./contacts.json');
+var contacts = require('./strategymap.json');
 var jp = require('jsonpath')
 
 module.exports = {

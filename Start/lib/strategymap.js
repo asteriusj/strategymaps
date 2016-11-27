@@ -1,0 +1,168 @@
+[
+  {
+    "id": 11111,
+    "title": "Barry Strategy Map",
+    "owner": "Barney Poland",
+    "email": "barney@contoso.com"
+  },
+  {
+    "id": 222222,
+    "title": "Lucy Strategy Map",
+    "owner": "Lacy Barrera",
+    "email": "lacy@contoso.com"
+  },
+  {
+    "kind": "strategy#map",
+    "typeOf": "Strategy Map",
+    "etag": "",
+    "uid": "c24217b0-6311-4451-92ff-fa52cdd3e229",
+    "id": "33333",
+    "keywords": "",
+    "categories": "",
+    "title": "My Strategy Map",
+    "summary": "",
+    "owner": "",
+    "published": false,
+    "themes": [
+      {
+        "kind": "strategy#theme",
+        "typeOf": "Theme Filter",
+        "uid": "ac523395-839b-4dfa-97bf-6207fe103802",
+        "name": "Customer Intimate",
+        "shortname": "Customer Intimate"
+      },
+      {
+        "kind": "strategy#theme",
+        "typeOf": "Theme Filter",
+        "uid": "a5d528f1-420c-40d0-8f9c-519041a1c1d5",
+        "name": "Operationally Excellent",
+        "shortname": "Operationally Excellent"
+      },
+      {
+        "kind": "strategy#theme",
+        "typeOf": "Theme Filter",
+        "uid": "27dd2f1c-8728-4938-805e-e1c14aa1ba83",
+        "name": "Top Innovator",
+        "shortname": "Top Innovator"
+      }
+    ],
+    "persepctives": [
+      {
+        "kind": "strategy#perspective",
+        "typeOf": "Perspective",
+        "uid": "ea2ea8b7-1d56-4f22-b27a-7a209937f49e",
+        "name": "Financial",
+        "shortname": "Financial"
+      },
+      {
+        "kind": "strategy#perspective",
+        "typeOf": "Perspective",
+        "uid": "600f01c0-b5f3-4a27-a796-cbcdbdd90a74",
+        "name": "Customer Perspective",
+        "shortname": "Customer"
+      },
+      {
+        "kind": "strategy#perspective",
+        "typeOf": "Internal Business Processes",
+        "uid": "e670a079-9509-45fe-8282-d8ab4ac433ef",
+        "name": "Financial",
+        "shortname": "Internal Processes"
+      },
+      {
+        "kind": "strategy#perspective",
+        "typeOf": "Perspective",
+        "uid": "32df0f5b-6929-4d90-9b22-02cf1c1ba647",
+        "name": "Learning & Growth",
+        "shortname": "Learning and Growth"
+      }
+    ],
+    "maps": [
+      
+    ],
+    "scorecards": [
+      {
+        "kind": "strategy#scorecard",
+        "typeOf": "Scorecard",
+        "uid": "0b6bfba8-65c2-4380-82b6-7b87be5cfd95",
+        "id": "1",
+        "parentId": "",
+        "title": "Sample Scorecard",
+        "shortname": ""
+      }
+    ],
+    "measures": [
+      {
+        "kind": "strategy#measure",
+        "typeOf": "Metric",
+        "uid": "bdf06ae0-9f3b-4454-a1ce-830a11012188",
+        "name": "Number of foot patrols per week",
+        "shortname": "foot patrols / week"
+      },
+      {
+        "kind": "strategy#measure",
+        "typeOf": "Metric",
+        "uid": "9977e295-7405-406e-bb58-5f95dba027c4",
+        "name": "Hours of skills training completed in fiscal period",
+        "shortname": "Hours of skills training"
+      },
+      {
+        "kind": "strategy#measure",
+        "typeOf": "Metric",
+        "uid": "75ec395e-1084-4600-965a-27e04b1e73a9",
+        "name": "Number of People trained in fiscal period",
+        "shortname": "# of People trained"
+      }
+    ],
+    "objectives": [
+      {
+        "name": "Decrease turnover of 15% compared to last year",
+        "id": "212121"
+      },
+      {
+        "name": "Identify new technology advantages to our process",
+        "id": "121212"
+      }
+    ],
+    "initiatives": [
+      {
+        "kind": "strategy#initiative",
+        "typeOf": "Related Initiatives",
+        "uid": "30f8dff1-cf1d-4d45-be53-01c0d8852927",
+        "id": "1111",
+        "parentId": "",
+        "name": "Adding More Officers for Foot Patrol",
+        
+      }
+    ],
+    "tasks": [
+      {
+        "kind": "strategy#task",
+        "typeOf": "Task",
+        "uid": "57307a07-c6a3-4cbc-8a01-6999ee8e3389",
+        "id": "11112",
+        "parentId": "1111",
+        "name": "Train Officers",
+        "description": "Train more officers for foot patrols"
+      },
+      {
+        "kind": "strategy#task",
+        "typeOf": "Task",
+        "uid": "ca5e6697-517b-45bc-98fa-e7c85c40061c",
+        "id": "1111",
+        "parentId": "",
+        "name": "Recruit Officers",
+        "description": "Recruit officers for foot patrols"
+      }
+    ],
+    "userdefinedfields": [
+      {
+        "name": "version",
+        "value": "initial creation"
+      }
+    ],
+    "attacheddocuments": [
+      
+    ],
+    "shortname": ""
+  }
+]
