@@ -1,0 +1,116 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix sm: <http://https://foafiaf-asteriusj.c9.io/owl/strategymaps#> .
+
+<http://foafiaf-asteriusj.c9.io/owl/strategymap.owl>
+	a   owl:Ontology;
+	dce:title """Strategy Maps"""@en;
+	dce:description """Formal general description of strategy map entities and relationships."""@en;
+	dce:creator """Asterius Media LLC"""@en;
+	dce:publisher """Asterius Media LLC"""@en;
+	dce:format """OWL-Full"""@en;
+	rdfs:comment """Copyright (c) 2016 Asterius Media LLC """@en;
+	rdfs:seeAlso <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl>, <http://www.ontologydesignpatterns.org/ont/web/irw.owl> .
+	
+
+owl:Thing  rdfs:label  "Thing" .
+
+skos:Concept  a           owl:Class ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept"@en ;
+        skos:definition   "An idea or notion; a unit of thought."@en 
+
+doap:   a               owl:Ontology ;
+        dc:creator      "Edd Dumbill" ;
+        dc:description  "Slovník Description of a Project (DOAP, Popis projektu), popsaný použitím W3C RDF Schema a Web Ontology Language."@cs , "Das Vokabular \"Description of a Project (DOAP)\", beschrieben durch W3C RDF Schema and the Web Ontology Language."@de , "Le vocabulaire Description Of A Project (DOAP, Description D'Un Projet),\n\t\tdécrit en utilisant RDF Schema du W3C et OWL."@fr , "El vocabulario Description of a Project (DOAP, Descripción de un Proyecto), descrito usando RDF Schema de W3C\n\t\ty Web Ontology Language."@es , "The Description of a Project (DOAP) vocabulary, described using W3C RDF Schema and the Web Ontology Language." , "Vocabulário de descrição de um Projeto (DOAP - Description of a Project), descrito no esquema (schema) W3C RDF e na Web Ontology Language."@pt ;
+        dc:format       "application/rdf+xml" ;
+        dc:rights       "Copyright © 2004-2009 Edd Dumbill" ;
+        dc:title        "Description of a Project (DOAP) vocabulary" ;
+        owl:imports     foaf:index.rdf ;
+        foaf:maker      [ a          foaf:Person ;
+                          foaf:mbox  <mailto:edd@usefulinc.com> ;
+                          foaf:name  "Edd Dumbill"
+                        ] .
+doap:Project  a           rdfs:Class ;
+        rdfs:comment      "Projeto."@pt , "Projekt."@cs , "Un proyecto."@es , "Ein Projekt."@de , "Un projet."@fr , "A project."@en ;
+        rdfs:isDefinedBy  doap: ;
+        rdfs:label        "Proyecto"@es , "Projeto"@pt , "Projet"@fr , "Project"@en , "Projekt"@cs , "Prijekt"@de ;
+        rdfs:subClassOf   <http://xmlns.com/wordnet/1.6/Project> , foaf:Project .
+        
+#
+# ENTITIES
+#
+        
+strategymap:Entity  a         rdfs:Class , owl:Class ;
+        rdfs:comment        "\nAn entity (eg. person, organization, thing or physical artifact).\n" ;
+        rdfs:label          "Entities" ;
+        skos:definition     "Strategy maps identified entity(s)." ;
+        owl:equivalentClass  ;
+        vs:term_status      "" .
+        
+strategymap:Map  a         rdfs:Class , owl:Class ;
+        rdfs:comment        "\nAn strategy map ().\n" ;
+        rdfs:label          "Strategy Maps ;
+        skos:definition     "." ;
+        owl:equivalentClass    ;
+        vs:term_status      "" .
+
+strategymap:Objective  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "An objective our anticiapted outcome of a strategy (a collective endeavour monitored by measure(s))." ;
+    rdfs:isDefinedBy    strategymap: ;
+    rdfs:label          "Objective" ;
+    rdfs:subClassOf     strategymap:Entity , skos:Concept  ;
+    owl:disjointWith    foafiaf:Measure , foafiaf:Initiative ;
+    owl:equivalentClass foafiaf:Topic  , foafiaf:Objective , foafiaf:Strategy ;
+    vs:term_status      "" .
+    
+strategymap:Initiative   a		rdfs:Class , owl:Class ;
+        rdfs:comment        "An initiative, program or project (a collective endeavour of some kind)." ;
+        rdfs:isDefinedBy    strategymap: ;
+        rdfs:label          "Initiative" ;
+        rdfs:subClassOf     strategymap:Entity , skos:Concept  ;
+        owl:disjointWith    strategymap:Map ;
+        owl:equivalentClass doap:Project , org:Project , foaf:Project, foafiaf:Project   ;
+        vs:term_status      "" .
+  
+strategymap:Task   a		rdfs:Class , owl:Class ;
+        rdfs:comment        "A Task is an action or step in an Initiative)." ;
+        rdfs:isDefinedBy    strategymap: ;
+        rdfs:label          "Task" ;
+        rdfs:subClassOf     strategymap:Entity , skos:Concept  ;
+        owl:disjointWith    strategymap:Map , strategymap:Initiative ;
+        owl:equivalentClass   ;
+        vs:term_status      "" .
+        
+
+strategymap:Measure  
+    a       owl:Class , rdfs:Class ;
+    rdfs:comment      "A measurement or metric of a strategy (a indicator affected by project(s))." ;
+    rdfs:isDefinedBy  strategymap: ;
+    rdfs:label        "Measure" ;
+    rdfs:subClassOf   strategymap:Entity , skos:Concept  ;
+    owl:disjointWith  strategymap:Objective , strategymap:Initiative ;
+    owl:equivalentClass foafiaf:Measure , foafiaf:Metric ;
+    vs:term_status    "" .
+
+
+
+strategymap:Topic  
+    a                   owl:Class , rdfs:Class ;
+    rdfs:comment        "" ;
+    rdfs:isDefinedBy    strategymap: ;
+    rdfs:label          "Topic" ;
+    rdfs:subClassOf     strategymap:Entity , skos:Concept  ;
+	owl:equivalentClassfoafiaf:Topic  , skos:Concept , dul:Concept ;
+    vs:term_status      "" .
+
+
